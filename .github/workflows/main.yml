@@ -1,0 +1,25 @@
+name: Run Python script daily
+
+on:
+  schedule:
+    - cron: '0 0 * * *'  # Executa uma vez por dia à meia-noite UTC
+
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'  # Define a versão do Python (ajuste conforme sua necessidade)
+
+    - name: Install dependencies
+      run: |
+        pip install -r requirements.txt  # Se seu script precisar de dependências, adicione um arquivo requirements.txt
+
+    - name: Run Python script
+      run: BOT_GSISTE_CPAD.py  # Mude "your_script.py" para o nome do seu arquivo
