@@ -19,7 +19,8 @@ jobs:
 
     - name: Install dependencies
       run: |
-        pip install -r requirements.txt  # Se seu script precisar de dependências, adicione um arquivo requirements.txt
+        pip install -r requirements.txt  # Instala as dependências
 
     - name: Run Python script
-      run: BOT_GSISTE_CPAD.py  # Mude "your_script.py" para o nome do seu arquivo
+      run: |
+        python BOT_GSISTE_CPAD.PY  # Executa o script Python
